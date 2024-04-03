@@ -1,12 +1,10 @@
 package kaem0n.u5w1d2.entities;
 
 public class Drink extends Food {
-    private final String name;
     private final int milliliters;
 
     public Drink(double price, int kcal, String name, int milliliters) {
-        super(price, kcal);
-        this.name = name;
+        super(name, price, kcal);
         this.milliliters = milliliters;
     }
 
@@ -16,7 +14,6 @@ public class Drink extends Food {
                 "name='" + name + '\'' +
                 ", milliliters=" + milliliters +
                 ", price=" + price +
-                ", kcal=" + kcal +
-                '}';
+                ", kcal=" + kcal;
     }
 }

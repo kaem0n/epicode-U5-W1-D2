@@ -1,11 +1,12 @@
 package kaem0n.u5w1d2.entities;
 
+import lombok.Getter;
+
 import java.util.List;
 
+@Getter
 public class Pizza extends Food {
-    private final String name;
     private final List<Topping> toppings;
-
 
     public Pizza(String name, List<Topping> toppings) {
         this.name = name;
@@ -18,19 +19,10 @@ public class Pizza extends Food {
         });
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public List<Topping> getToppings() {
-        return toppings;
-    }
-
     @Override
     public String toString() {
         return "Pizza " + name + " " + toppings +
                 ", price=" + price +
-                ", kcal=" + kcal +
-                '}';
+                ", kcal=" + kcal;
     }
 }
