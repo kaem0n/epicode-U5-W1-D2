@@ -1,14 +1,13 @@
 package kaem0n.u5w1d2;
 
-import kaem0n.u5w1d2.entities.Drink;
-import kaem0n.u5w1d2.entities.Menu;
-import kaem0n.u5w1d2.entities.Pizza;
-import kaem0n.u5w1d2.entities.Topping;
+import kaem0n.u5w1d2.entities.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Configuration
 public class AppConfig {
@@ -114,5 +113,17 @@ public class AppConfig {
         pizzas.add(getSalamosa());
         pizzas.add(getCalabrese());
         return new Menu(pizzas, drinks);
+    }
+
+    @Bean
+    @Scope("prototype")
+    public int getTableNumber() {
+        return new Random().nextInt(1, 21);
+    }
+
+    @Bean
+    @Scope("prototype")
+    public int getSeats() {
+        return new Random().nextInt(1, 11);
     }
 }
